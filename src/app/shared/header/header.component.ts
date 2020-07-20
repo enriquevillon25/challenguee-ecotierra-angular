@@ -17,4 +17,7 @@ export class HeaderComponent implements OnInit {
   redirectRegistrate(){
     this.router.navigate(['registrate']);
   }
+  redirectHome(){
+    this.router.navigate(['registrate']);
+  }
 }
