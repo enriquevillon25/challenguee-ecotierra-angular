@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+:host{
+    .wrapper-facture{
+        display: inline-flex;
+        transform: translate(200px);
+        position: absolute;
+        border: 3px solid $primary-color;
+        top: 60%;
+        .form-group{
+            margin: 20px;
+            text-align: center;
+            h3{
+                color: $primary-color;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+
+    }
+    table{
+        display: inline-table;
+        width: 50%;
+        margin: 3% auto 5% 5%;
+        th{
+            background: $primary-color;
+            color: $white;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+            padding-left: 0px;
+        }
+        td{
+            font-size: 15px;
+            text-align: center;
+            padding: 15px;
+            margin: 10px auto 10px auto;
+            button{
+                min-width: 56px;
+            }
+        }
+    }
+    .button-submit{
+        transform: translate(300%);
+        position: absolute;
+        top: 90%;
+    }
+}
+   

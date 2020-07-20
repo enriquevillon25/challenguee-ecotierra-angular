@@ -1,12 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {UserModule} from './user/user.module';
-import{SharedModule} from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {clienteComponent} from './cliente/cliente.component';
+import { RegisterComponent} from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+import {SharedModule} from '../shared/shared.module';
+import {CoreModule} from '../core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -18,18 +17,28 @@ import { MatInputModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+
+const userRoutes: Routes = [
+  {
+    path: "", redirectTo:"/registrate", pathMatch: "full"
+  },
+  {
+    path: 'registrate', component: RegisterComponent,
+
+  },
+  {
+    path: 'clientes', component : clienteComponent,
+  }
+]
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [clienteComponent, RegisterComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UserModule,
+    RouterModule.forChild(userRoutes),
     SharedModule,
-    BrowserAnimationsModule,
+    CoreModule,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
@@ -38,12 +47,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule,
     MatTableModule,
-    MatDialogModule,
-    MatSnackBarModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class UserModule { }

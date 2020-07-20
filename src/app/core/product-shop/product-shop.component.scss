@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+:host{        
+    table{
+        width: 70%;
+        margin: 5% auto 5% auto;
+        th{
+            background: $primary-color;
+            color: $white;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+            padding-left: 0px;
+        }
+        td{
+            font-size: 15px;
+            text-align: center;
+            padding: 15px;
+            margin: 10px auto 10px auto;
+        }
+    }
+    .button-submit{
+        
+        transform: translate(50%, 80%);
+    }
+}

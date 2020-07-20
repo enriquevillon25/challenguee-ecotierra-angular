@@ -1,0 +1,47 @@
+
+<app-header></app-header>
+
+<h1 class="form-title" *ngIf="cliente"> REGISTRO DE COMPRAS DE {{cliente.nombre |uppercase}} </h1>
+
+<ng-container *ngIf="dataSource">    
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre | titlecase }} </td>
+    </ng-container>
+    <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+         <td mat-cell *matCellDef="let element; let i=index">
+             <button (click)="minusAmount(i)" mat-raised-button color="primary"> <mat-icon> remove </mat-icon> </button>
+             {{element.cantidad}}
+             <button (click)="mostAmount(i)" mat-raised-button color="primary"> <mat-icon> add </mat-icon> </button>
+         </td> 
+    </ng-container>
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+         <td mat-cell *matCellDef="let element; let i=index"> {{element.total | number:'.0'}} </td> -->
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="wrapper-facture">
+    <div class="form-group">
+        <h3> SUB TOTAL</h3>
+        <p>{{acumulador}}</p>
+    </div>
+    <div class="form-group">
+        <h3> IGV</h3>
+        <p>{{acumulador*0.18}}</p>
+    </div>
+    <div class="form-group">
+        <h3> TOTAL</h3>
+        <p>{{acumulador*1.18}}</p>
+    </div>
+</div>
+<button class="button-submit" mat-raised-button color="primary" (click)="submit()"class="button-submit"> COMPRAR </button>
+  
+</ng-container>

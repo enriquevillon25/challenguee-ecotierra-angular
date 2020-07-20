@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+h1{
+    text-align: center;
+}
+form{
+    margin: 4% auto 5%  auto;
+    width: 60%;
+    border: 3px solid $primary-color;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    .mat-form-field{
+        margin: 20px;
+    }
+}
+
+.wrapper-button{
+    display: block;
+    margin: 3% auto;
+    border: none;
+    font-size: 20px;
+    background: $primary-color;
+    width: 20%;
+    color: white;
+    border-radius: 10px;
+}

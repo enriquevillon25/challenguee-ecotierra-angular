@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<ng-container *ngIf="cliente">
+    <h1 class="form-title"> Lista de compras totales de {{cliente.nombre}}</h1>
+</ng-container>
+
+<ng-container *ngIf="dataSource">
+    <table mat-table [dataSource]="dataSource" color="primary" class="mat-elevation-z8">
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Id Compra</th>
+            <td mat-cell *matCellDef="let element"> {{element.idCompra}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cantidad">
+            <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+            <td mat-cell *matCellDef="let element"> {{element.cantidadTotal}} </td>
+        </ng-container>
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef>Precio</th>
+            <td mat-cell *matCellDef="let element"> {{element.subTotal / element.cantidadTotal }} </td>
+        </ng-container>
+        <ng-container matColumnDef="subtotal">
+            <th mat-header-cell *matHeaderCellDef>Subtotal</th>
+            <td mat-cell *matCellDef="let element"> {{element.subTotal| number:'.0'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="igv">
+            <th mat-header-cell *matHeaderCellDef>IGV</th>
+            <td mat-cell *matCellDef="let element"> {{element.igv | number:'.0'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total</th>
+            <td mat-cell *matCellDef="let element"> {{element.subTotal * 1.18}} </td>
+        </ng-container>
+        <ng-container matColumnDef="detalle">
+            <th mat-header-cell *matHeaderCellDef>Detalle</th>
+            <td mat-cell *matCellDef="let element; let i = index"> <button (click)="redirectDetail(i)" mat-raised-button color="primary">
+                <mat-icon>visibility</mat-icon>
+            </button>  </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</ng-container>

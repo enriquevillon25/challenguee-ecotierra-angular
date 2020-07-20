@@ -1,0 +1,22 @@
+
+
+<app-header></app-header>
+
+<h1 class="form-title">Agregar Cliente </h1>
+
+<form (ngSubmit)="onSubmit()" #formMascota="ngForm">
+    <mat-form-field>
+        <input matInput name="nombre" [(ngModel)]="clienteModel.nombre" type="text" placeholder="Nombre">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="apellido" [(ngModel)]="clienteModel.apellido" type="text" placeholder="Apellido">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="edad" [(ngModel)]="clienteModel.edad" type="number" placeholder="Edad">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="edad" [(ngModel)]="clienteModel.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
+    </mat-form-field>
+</form>
+ 
+<button type="submit" class="wrapper-button"(click)="onSubmit()" mat-flat-button color="accent">Registrar</button>
