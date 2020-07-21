@@ -18,13 +18,9 @@ import { MatInputModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormRegisterDirective } from './directives/form-register.directive';
-import { OnlyLettersDirective } from './directives/only-letters.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    FormRegisterDirective,
-    OnlyLettersDirective,
   ],
   imports: [
     BrowserModule,
