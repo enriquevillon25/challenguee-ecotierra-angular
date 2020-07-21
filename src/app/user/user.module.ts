@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DirectivesModule} from '../directives/directives.module';
 
 const userRoutes: Routes = [
   {
@@ -48,6 +49,7 @@ const userRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    DirectivesModule,
   ]
 })
 export class UserModule { }

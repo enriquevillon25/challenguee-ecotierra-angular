@@ -4,18 +4,18 @@
 
 <h1 class="form-title">Agregar Cliente </h1>
 
-<form (ngSubmit)="onSubmit()" #formMascota="ngForm">
+<form (ngSubmit)="onSubmit()" #formRegister="ngForm">
     <mat-form-field>
-        <input matInput name="nombre" [(ngModel)]="clienteModel.nombre" type="text" placeholder="Nombre">
+        <input matInput name="nombre" [(ngModel)]="clienteModel.nombre" type="text" appOnlyLetters placeholder="Nombre">
     </mat-form-field>
     <mat-form-field>
-        <input matInput name="apellido" [(ngModel)]="clienteModel.apellido" type="text" placeholder="Apellido">
+        <input matInput name="apellido" [(ngModel)]="clienteModel.apellido" type="text" appOnlyLetters placeholder="Apellido">
     </mat-form-field>
     <mat-form-field>
-        <input matInput name="edad" [(ngModel)]="clienteModel.edad" type="number" placeholder="Edad">
+        <input matInput name="edad" [(ngModel)]="clienteModel.edad" type="number" appOnlyNumbers placeholder="Edad">
     </mat-form-field>
     <mat-form-field>
-        <input matInput name="edad" [(ngModel)]="clienteModel.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
+        <input matInput name="fechaNacimiento" [(ngModel)]="clienteModel.fechaNacimiento"  appOnlyNumbers type="date" placeholder="Fecha de nacimiento">
     </mat-form-field>
 </form>
  
